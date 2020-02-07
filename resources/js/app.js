@@ -31,9 +31,13 @@ const app = new Vue({
     el: '#app',
 });
 
+
+
 $(document).ready(function() {
-    $('#content').summernote();
-    var markupStr = $('#content').summernote('code');
-    var markupStr = $('.content').eq(1).summernote('code');
-    $('#summernote').summernote('code', markupStr);
+    $('.summernote').summernote({
+        height: 150,   //set editable area's height
+        codemirror: { // codemirror options
+          theme: 'monokai'
+        }
+      });
 });
