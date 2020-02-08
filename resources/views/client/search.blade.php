@@ -6,7 +6,7 @@
         <div class="content">
             <div class="container include">
                 <div class="row">
-                    <div class="content-main col-sm-8">
+                    <div class="content-main col-sm-9">
                         @foreach($news as $item)
                             <div class="col-sm-12 news">
                                 <article>
@@ -46,7 +46,7 @@
                             </article>
                         </div> -->
                     </div>
-                    <div class="content-right col-sm-4">
+                    <!-- <div class="content-right col-sm-4">
                         <div class="title-right">
                             <span>Tin tức khác</span>
                         </div>
@@ -62,31 +62,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        <!-- <div class="ar-right row">
-                            <div class='img-r col-sm-3'>
-                                <img src="http://thuthuatphanmem.vn/uploads/2015/05/19/word_090703.png" alt=""width="100%" >
-                            </div>
-                            <div class='img-r col-sm-9'>
-                                <a href="">Cách đánh số trang trong word (từ đầu hoặc trang bất kỳ)</a>
-                            </div>
-                        </div>
-                        <div class="ar-right row">
-                            <div class='img-r col-sm-3'>
-                                <img src="http://thuthuatphanmem.vn/uploads/2015/05/19/word_090703.png" alt=""width="100%" >
-                            </div>
-                            <div class='img-r col-sm-9'>
-                                <a href="">Cách đánh số trang trong word (từ đầu hoặc trang bất kỳ)</a>
-                            </div>
-                        </div>
-                        <div class="ar-right row">
-                            <div class='img-r col-sm-3'>
-                                <img src="http://thuthuatphanmem.vn/uploads/2015/05/19/word_090703.png" alt=""width="100%" >
-                            </div>
-                            <div class='img-r col-sm-9'>
-                                <a href="">Cách đánh số trang trong word (từ đầu hoặc trang bất kỳ)</a>
-                            </div>
-                        </div> -->
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

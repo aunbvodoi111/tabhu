@@ -58,9 +58,10 @@ class DetailController extends Controller
     //     return view('client.detail',compact('news','newsPr','newsLis'));
     // }
 
-    public function index(Request $request)
+    public function index(Request $request,$title,$id)
     {
-        $news = News::where('id',14)->first();
+        // dd($title);
+        $news = News::where('id',$id)->first();
        
         return view('client.detail',compact('news'));
     }

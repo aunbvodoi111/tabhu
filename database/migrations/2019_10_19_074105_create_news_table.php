@@ -18,18 +18,15 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->string('image');
             $table->string('short_title');
-            $table->string('view');
+            $table->string('view')->default(0);
             $table->string('lang');
             $table->text('description');
             $table->integer('status');
-            $table->integer('subcate_id')->unsigned();
-            $table->foreign('subcate_id')->references('id')->on('subcates')->onDelete('cascade');
-            $table->integer('subcate_id')->unsigned();
+            $table->integer('subphu_id');
+            $table->integer('subcate_id');
+            $table->integer('cate_id')->unsigned();
             $table->foreign('cate_id')->references('id')->on('cates')->onDelete('cascade');
-            $table->integer('subphu_id')->unsigned();
-            $table->foreign('subphu_id')->references('id')->on('subphus')->onDelete('cascade');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

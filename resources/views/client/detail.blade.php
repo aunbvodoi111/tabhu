@@ -14,20 +14,11 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
 <section>
     <div class='container'>
-        <div class="search">
-            <div class="row">
-                <div class="input-txt col-sm-10">
-                    <input type="text" class="txt-search" placeholder="Tìm kiếm">
-                </div>
-                <div class="button-search col-sm-2">
-                    <button type="submit">Tìm kiếm</button>
-                </div>
-            </div>
-        </div>
+        @include('client.master.search')
         <div class="content">
             <div class="container include">
                 <div class="row">
-                    <div class="content-main col-sm-8">
+                    <div class="content-main col-sm-9">
                         <div class="main-breadcum container">
                              <a href="">Trang chủ</a>›
                              <a href="">Đồ họa</a>›
@@ -36,9 +27,9 @@
                         <div class="title-ar-d container">
                             <h1>Hướng dẫn cách khử Noise trong Photoshop</h1>
                         </div>
-                        <div class="post-meta">
-                            <i class="far fa-user"></i> Phạm Qúy
-                            <i class="far fa-clock"></i> February 1, 2020
+                        <div class="post-meta container">
+                            <i class="far fa-user"></i> {{ $news->user->name }}
+                            <i class="far fa-clock"></i> {{ $news->created_at->diffForHumans() }}
                         </div>
                         <div class="detail">
                             <p>{!! $news->description !!}</p>
@@ -73,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-right col-sm-4">
+                    <div class="content-right col-sm-3">
                         <div class="title-right">
                             <span>Tin tức khác</span>
                         </div>

@@ -15,15 +15,19 @@ Route::get('/re', function () {
     return view('test');
 });
 
-Route::get('/', function () {
-    return view('client.index ');
-});
+Route::get('/', 'HomeController@index');
 // Route::get('/detail', function () {
 //     return view('client.detail ');
 // });
-Route::get('/detail', 'DetailController@index')->name('home');
+// Route::get('/detail', 'DetailController@index')->name('home');
 Route::get('summernote',array('as'=>'summernote.get','uses'=>'FileController@getSummernote'));
+Route::get('{title}-z{id}', ['as' => 'list', 'uses' => 'DetailController@index'])
+->where([
+    'title' => '[a-zA-Z0-9_\-]+',
+    'id' => '[0-9]+',
+]);
 
+Route::get('/search','HomeController@search');
 Route::post('summernote',array('as'=>'summernote.post','uses'=>'FileController@postSummernote'));
 Route::get('/home', 'HomeController@index')->name('home');
 Route::any('ajax/{id}','AjaxController@init');

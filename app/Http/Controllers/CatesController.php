@@ -75,6 +75,7 @@ class CatesController extends Controller
     		]);
     	$cate = new cate();
 		$cate->title = $res->title;
+		$cate->icon = $res->icon;
 		$cate->lang = $res->lang;
 		$cate->status = $res->status;
     	$cate->save();

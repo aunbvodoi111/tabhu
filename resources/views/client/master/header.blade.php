@@ -20,15 +20,17 @@
         <div class="container">
             <ul>
                 <li><a href="/"><i class="fas fa-home logo-icon"></i></a></li>
-                <li><a href="/"><i class="fab fa-windows logo-icon"></i>Phần mềm <i class="fas fa-caret-down multipe-menu"></i></a></li>
+                <!-- <li><a href="/"><i class="fab fa-windows logo-icon"></i>Phần mềm <i class="fas fa-caret-down multipe-menu"></i></a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Internet</a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Đồ họa</a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động</a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động <i class="fas fa-caret-down multipe-menu"></i></a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động</a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động</a></li>
-                <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động</a></li>
-                
+                <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động</a></li> -->
+                @foreach($cate as $item)
+                    <li><a href="/"><i class="fab fa-windows logo-icon"></i>{{$item->title}} <i class="fas fa-caret-down multipe-menu"></i></a></li>
+                @endforeach
             </ul>
         </div>
     </div>

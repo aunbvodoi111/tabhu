@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Cate;
+use App\News;
 class HomeController extends Controller
 {
     /**
@@ -13,7 +14,10 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $cate = Cate::with('subcates')->get();
+        
+        \View::share('cate', $cate);
+        // $this->middleware('auth');
     }
 
     /**
@@ -23,6 +27,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $news = News::orderBy('id','DESC')->inRandomOrder()->get();
+        return view('client.index',compact('news'));
     }
+
+    public function search(Request $request){
+        $news = News::where('title','like', '%' . $request->search . '%')->get();
+        $keyword = $request->search;
+          return view('client.search',compact('news','keyword'));
+      }
 }

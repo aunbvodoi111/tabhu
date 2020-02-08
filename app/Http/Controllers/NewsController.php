@@ -107,7 +107,7 @@ class NewsController extends Controller
 			$dom = new \DomDocument();
 
 
-$dom->loadHTML('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $detail ); // important!
+@$dom->loadHTML('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $detail ); // important!
 
 
 
@@ -145,8 +145,13 @@ $detail = $dom->saveHTML( $dom->documentElement );
 		$news->title = $res->title;
 		$news->subcate_id = $res->subcate_id;
 		$news->lang = $res->lang;
+		$news->short_title = 'Với Firebase, bạn có thể lưu trữ và đồng bộ hóa dữ liệu lên NoSQL cloud database.';
+		$news->subphu_id = 1;
+		$news->cate_id = 1;
+		$news->user_id = 1;
 		$news->status = 1;
 		$news->description = $detail;
+		
 		
 		if($res->hasFile('image'))
 			{
