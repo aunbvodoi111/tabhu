@@ -51,8 +51,8 @@
                             <span>Tin tức khác</span>
                         </div>
                         <ul>
-                            @foreach($news->subcates as $item)
-                                <li><a href="{{Str_slug($news->title)}}/{{Str_slug($item->title)}}-z{{$item->id}}">{{$item->title}}</a></li>
+                            @foreach($news->subphu as $item)
+                                <li><a href="{{Str_slug($news->title)}}/{{Str_slug($item->title)}}-k{{$item->id}}">{{$item->title}}</a></li>
                             @endforeach
                         </ul>
                     </div>

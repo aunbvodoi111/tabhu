@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cate;
 use App\Subcate;
+use App\Subphu;
 use App\News;
 class DetailController extends Controller
 {
@@ -63,8 +64,17 @@ class DetailController extends Controller
     {
         // dd($title);
         $news = News::where('id',$id)->first();
-       
-        return view('client.detail',compact('news'));
+        
+        if($news->subphu_id > 0){
+            $lienquan = News::where('subphu_id',$news->subphu_id)->get();
+            break; 
+        }else if($news->subcate_id > 0){
+            $lienquan = News::where('subcate_id',$news->subphu_id)->get();
+            break; 
+        }else if($news->cate_id > 0){
+            $lienquan = News::where('cate_id',$news->subphu_id)->get();
+        }
+        return view('client.detail',compact('news','lienquan'));
     }
 
     public function cate(Request $request,$title,$id)
@@ -76,7 +86,14 @@ class DetailController extends Controller
     public function subcate(Request $request,$subcate,$title,$id)
     {
         $news = Subcate::where('id',$id)->with('news')->first();
-        return view('client.list',compact('news'));
+        return view('client.sublist',compact('news'));
+    }
+
+    public function subphu(Request $request,$subcate,$title,$id)
+    {
+        $news = Subphu::where('id',$id)->with('news')->first();
+        // dd($news);
+        return view('client.sublist',compact('news'));
     }
 
     

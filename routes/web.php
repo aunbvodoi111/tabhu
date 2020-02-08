@@ -41,6 +41,14 @@ Route::get('{cate}/{title}-z{id}', ['as' => 'list', 'uses' => 'DetailController@
     'id' => '[0-9]+',
 ]);
 
+Route::get('{cate}/{title}-k{id}', ['as' => 'list', 'uses' => 'DetailController@subphu'])
+->where([
+	'cate' => '[a-zA-Z0-9_\-]+',
+    'title' => '[a-zA-Z0-9_\-]+',
+    'id' => '[0-9]+',
+]);
+
+
 Route::get('/search','HomeController@search');
 Route::post('summernote',array('as'=>'summernote.post','uses'=>'FileController@postSummernote'));
 Route::get('/home', 'HomeController@index')->name('home');
