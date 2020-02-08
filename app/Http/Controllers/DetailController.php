@@ -43,18 +43,25 @@ class DetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */ 
-    public function index(Request $request,$title,$id)
+    // public function index(Request $request,$title,$id)
+    // {
+    //     $news = News::where('lang',\Lib::langindex())->where('id',$id)->first();
+    //     $newsPr = News::where('lang',\Lib::langindex())->where('status',1)->take(6)->get();
+    //     $newsLis = News::where('lang',\Lib::langindex())->where('status',2)->take(5)->get();
+    //     if($news == null){
+    //        if(\Lib::langindex() == 'vi'){
+    //             $news = News::where('lang',\Lib::langindex())->where('id',$id - 1)->first();
+    //        }else{
+    //             $news = News::where('lang',\Lib::langindex())->where('id',$id + 1)->first();
+    //        }
+    //     }
+    //     return view('client.detail',compact('news','newsPr','newsLis'));
+    // }
+
+    public function index(Request $request)
     {
-        $news = News::where('lang',\Lib::langindex())->where('id',$id)->first();
-        $newsPr = News::where('lang',\Lib::langindex())->where('status',1)->take(6)->get();
-        $newsLis = News::where('lang',\Lib::langindex())->where('status',2)->take(5)->get();
-        if($news == null){
-           if(\Lib::langindex() == 'vi'){
-                $news = News::where('lang',\Lib::langindex())->where('id',$id - 1)->first();
-           }else{
-                $news = News::where('lang',\Lib::langindex())->where('id',$id + 1)->first();
-           }
-        }
-        return view('client.detailnews',compact('news','newsPr','newsLis'));
+        $news = News::where('id',14)->first();
+       
+        return view('client.detail',compact('news'));
     }
 }

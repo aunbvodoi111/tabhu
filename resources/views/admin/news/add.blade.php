@@ -1,5 +1,16 @@
 
         <!-- Header-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+
+<script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<!-- include summernote css/js-->
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
 @extends('admin.index')
         @section('content')
         {{ csrf_field() }}
@@ -64,16 +75,7 @@
                               <div class="row form-group">
                                 <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Textarea</label></div>
                                 <div class="col-12 col-md-9">
-                                  <textarea name="description" id="text" cols="30" rows="25" class="ckeditor" ></textarea>
-                                  <script type="text/javascript">
-                                    var editor = CKEDITOR.replace('description',{
-                                      language:'vi',
-                                      filebrowserImageBrowseUrl: '../../ckfinder/ckfinder.html?Type=Images',
-                                      filebrowserFlashBrowseUrl: '../../ckfinder/ckfinder.html?Type=Flash',
-                                      filebrowserImageUploadUrl: '../../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                      filebrowserFlashUploadUrl: '../../public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                    });
-                                  </script>
+                                  <textarea class="form-control summernote" name="detail"></textarea>
                                 </div>
                               </div>
                               <div class="row form-group">
@@ -146,9 +148,16 @@
                 </div><!-- .animated -->
             </div><!-- .content -->
           </div><!-- /#right-panel -->
-      <script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
-      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script>
+          $(document).ready(function() {
+
+            $('.summernote').summernote({
+
+                  height: 300,
+
+            });
+
+          });
           $(document).ready(function(){
             $('#chang_subcate').change(function(){
               var id = $(this).val() 
@@ -181,6 +190,8 @@
                 }
               });
             });
+            
+    
           });
       </script>
     @endsection

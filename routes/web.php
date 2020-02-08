@@ -11,17 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/re', function () {
     return view('test');
 });
 
 Route::get('/', function () {
     return view('client.index ');
 });
-Route::get('/detail', function () {
-    return view('client.detail ');
-});
-
+// Route::get('/detail', function () {
+//     return view('client.detail ');
+// });
+Route::get('/detail', 'DetailController@index')->name('home');
 Route::get('summernote',array('as'=>'summernote.get','uses'=>'FileController@getSummernote'));
 
 Route::post('summernote',array('as'=>'summernote.post','uses'=>'FileController@postSummernote'));

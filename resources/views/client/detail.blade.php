@@ -1,5 +1,17 @@
 @extends('client.master.index')
 @section('content')
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- include summernote css/js-->
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
 <section>
     <div class='container'>
         <div class="search">
@@ -27,6 +39,9 @@
                         <div class="post-meta">
                             <i class="far fa-user"></i> Phạm Qúy
                             <i class="far fa-clock"></i> February 1, 2020
+                        </div>
+                        <div class="detail">
+                            <p>{!! $news->description !!}</p>
                         </div>
                         <div class="ar-relate">
                             <h2>Bài viết liên quan</h2>

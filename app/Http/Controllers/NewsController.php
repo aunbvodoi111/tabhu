@@ -86,31 +86,68 @@ class NewsController extends Controller
 				'title'=>'required|min:3|max:100',
 				'lang'=>'required',
 				'status'=>'required',
-				'description'=>'required',
+				
 				'subphu_id'=>'required',
 				'image'=>'required',
+				'detail' => 'required',
     		],
     		[
     			'title.required'=>'Bạn chưa nhập danh mục chính',
 				'title.min'=>'Tên phải có nhiều hơn 3 kí tự',
 				'lang.required'=>'Bạn chưa chọn ngôn ngữ',
 				'subphu_id.required'=>'Bạn chưa chọn danh mục phụ',
-				'description.required'=>'Bạn chưa nhập miêu tả',
+				
 				'status.required'=>'bạn chưa chọn loại danh mục',
 				'title.max'=>'Tên phải có ít hơn 100 kí tự',
 				'image.required'=>'Bạn chưa chọn hình ảnh',
-    		]);
+			]);;
+	
+			$detail=$res->input('detail');
+				
+			$dom = new \DomDocument();
+
+
+$dom->loadHTML('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $detail ); // important!
+
+
+
+			
+	
+			$images = $dom->getElementsByTagName('img');
+	
+			foreach($images as $k => $img){
+	
+				$data = $img->getAttribute('src');
+	
+				list($type, $data) = explode(';', $data);
+	
+				list(, $data)      = explode(',', $data);
+	
+				$data = base64_decode($data);
+	
+				$image_name= "/upload/" . time().$k.'.png';
+	
+				$path = public_path() . $image_name;
+	
+				file_put_contents($path, $data);
+	
+				$img->removeAttribute('src');
+	
+				$img->setAttribute('src', $image_name);
+				// dd($image_name);
+	
+			}
+$detail = $dom->saveHTML( $dom->documentElement );
+			// $detail = $dom->saveHTML();
+
+			
     	$news = new News();
 		$news->title = $res->title;
 		$news->subcate_id = $res->subcate_id;
 		$news->lang = $res->lang;
-		$news->subphu_id = $res->subphu_id;
-		$news->description = $res->description;
-		if($res->status == 6 || $res->status == 7){
-			$news->status = 1;
-		}else if($res->status == 6 || $res->status == 7){
-			$news->status = 2;
-		}
+		$news->status = 1;
+		$news->description = $detail;
+		
 		if($res->hasFile('image'))
 			{
 				$file=$res->file('image');
