@@ -21,8 +21,22 @@ Route::get('/', 'HomeController@index');
 // });
 // Route::get('/detail', 'DetailController@index')->name('home');
 Route::get('summernote',array('as'=>'summernote.get','uses'=>'FileController@getSummernote'));
-Route::get('{title}-z{id}', ['as' => 'list', 'uses' => 'DetailController@index'])
+
+Route::get('{title}-t{id}', ['as' => 'list', 'uses' => 'DetailController@index'])
 ->where([
+    'title' => '[a-zA-Z0-9_\-]+',
+    'id' => '[0-9]+',
+]);
+
+Route::get('{title}-z{id}', ['as' => 'list', 'uses' => 'DetailController@cate'])
+->where([
+    'title' => '[a-zA-Z0-9_\-]+',
+    'id' => '[0-9]+',
+]);
+
+Route::get('{cate}/{title}-z{id}', ['as' => 'list', 'uses' => 'DetailController@subcate'])
+->where([
+	'cate' => '[a-zA-Z0-9_\-]+',
     'title' => '[a-zA-Z0-9_\-]+',
     'id' => '[0-9]+',
 ]);

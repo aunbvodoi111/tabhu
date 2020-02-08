@@ -15,4 +15,12 @@ class Cate extends Model
     public function subcates(){
         return $this->hasMany(Subcate::class,'cate_id','id');
     }
+
+    public function news()
+    {
+        return $this->hasManyThrough(
+            'App\News', 'App\Subphu',
+            'subcate_id', 'subphu_id', 'id'
+        );
+    }
 }

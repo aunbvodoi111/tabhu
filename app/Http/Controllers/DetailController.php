@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cate;
+use App\Subcate;
 use App\News;
 class DetailController extends Controller
 {
@@ -65,4 +66,18 @@ class DetailController extends Controller
        
         return view('client.detail',compact('news'));
     }
+
+    public function cate(Request $request,$title,$id)
+    {
+        $news = Cate::where('id',$id)->with('news')->first();
+        return view('client.list',compact('news'));
+    }
+
+    public function subcate(Request $request,$subcate,$title,$id)
+    {
+        $news = Subcate::where('id',$id)->with('news')->first();
+        return view('client.list',compact('news'));
+    }
+
+    
 }

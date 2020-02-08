@@ -29,7 +29,7 @@
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động</a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động</a></li> -->
                 @foreach($cate as $item)
-                    <li><a href="/"><i class="fab fa-windows logo-icon"></i>{{$item->title}} <i class="fas fa-caret-down multipe-menu"></i></a></li>
+                    <li><a href="{{Str_slug($item->title)}}-z{{$item->id}}"><i class="fab fa-windows logo-icon"></i>{{$item->title}} <i class="fas fa-caret-down multipe-menu"></i></a></li>
                 @endforeach
             </ul>
         </div>
