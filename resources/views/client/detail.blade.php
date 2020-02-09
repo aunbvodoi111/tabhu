@@ -20,9 +20,9 @@
                 <div class="row">
                     <div class="content-main col-sm-9">
                         <div class="main-breadcum container">
-                             <a href="">Trang chủ</a>›
-                             <a href="">{{ $data->subphu->subcate->title }}</a>›
-                             <a href="">{{ $data->subphu->title }}</a>
+                             <a href="/">Trang chủ</a>›
+                             <a href="{{Str_slug($data->subphu->subcate->title)}}/{{Str_slug($data->subphu->title)}}-z{{$data->subphu->id}}">{{ $data->subphu->subcate->title }}</a>›
+                             <a href="{{Str_slug($data->subphu->subcate->title)}}/{{Str_slug($data->subphu->title)}}-z{{$data->subphu->id}}">{{ $data->subphu->title }}</a>
                         </div>
                         <div class="title-ar-d container">
                             <h1>{{ $data->title }}</h1>
@@ -39,10 +39,16 @@
                             <div class="row">
                                 @foreach($lienquan as $item)
                                     <div class="news-relative col-sm-4">
-                                        <a href="{{Str_slug($item->title)}}-t{{$item->id}}">
-                                            <img src="img/{{$item->image}}" alt="" width="100%">
-                                        </a>
-                                        <a href="{{Str_slug($item->title)}}-t{{$item->id}}">{{$item->title}}</a>
+                                        <div class="row">
+                                            <div class="col-4 col-lg-12">
+                                                <a href="{{Str_slug($item->title)}}-t{{$item->id}}">
+                                                    <img src="img/{{$item->image}}" alt="{{$item->title}}" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="col-8 col-lg-12">
+                                                <a href="{{Str_slug($item->title)}}-t{{$item->id}}">{{$item->title}}</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 @endforeach
                                 <!-- <div class="news-relative col-sm-4">

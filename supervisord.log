@@ -70,3 +70,7 @@
 2020-02-09 08:44:32,258 INFO spawned: 'horizon' with pid 175
 2020-02-09 08:44:33,217 INFO exited: horizon (exit status 1; not expected)
 2020-02-09 08:44:34,219 INFO gave up: horizon entered FATAL state, too many start retries too quickly
+2020-02-09 10:15:21,425 INFO exited: cron-job (terminated by SIGTERM; not expected)
+2020-02-09 10:15:21,434 WARN received SIGTERM indicating exit request
+2020-02-09 10:15:21,435 INFO waiting for php-fpm to die
+2020-02-09 10:15:21,453 INFO exited: php-fpm (exit status 0; expected)

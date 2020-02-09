@@ -157,9 +157,32 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script>
     $(document).ready(function(){
-        $(".po ").hover(function(){
+        $(".po").hover(function(){
             $(this).find(".ab").toggle()
         })
+        $(".show-desk").click(function(){
+            $('.po').toggle(100)
+        })
+        var scrollTop = $("#scrollTop"); 
+
+        $(window).scroll(function() {
+            var topPos = $(this).scrollTop();
+            if (topPos > 100) {
+                $(scrollTop).css("opacity", "1");
+
+            } else {
+                $(scrollTop).css("opacity", "0");
+            }
+
+            }); 
+
+            $(scrollTop).click(function() {
+            
+            $('html, body').animate({
+                scrollTop: 0
+            }, 600);
+                return false;
+        });
     })
   </script>
 </head>
@@ -171,7 +194,7 @@
     <div class="menu container-fruid">
         <div class="container ta">
             <ul>
-                <li><a href="/"><i class="fas fa-home logo-icon"></i></a></li>
+                <li><a href="/" class="hide-desk"><i class="fas fa-home logo-icon "></i></a> <a href="javascript:void(0)" class="show-desk"><i class="fas fa-bars logo-icon "></i></a></li> 
                 <!-- <li><a href="/"><i class="fab fa-windows logo-icon"></i>Phần mềm <i class="fas fa-caret-down multipe-menu"></i></a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Internet</a></li>
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Đồ họa</a></li>
@@ -186,6 +209,9 @@
                         @if(count($item->subcates) > 0)
                             <ul class='ab'>
                                 @foreach($item->subcates as $row)
+                                    <li>
+                                        <a href="{{Str_slug($item->title)}}/{{Str_slug($row->title)}}-z{{$row->id}}"><i class="fab fa-windows logo-icon"></i>{{$row->title}}</a>
+                                    </li>
                                     <li>
                                         <a href="{{Str_slug($item->title)}}/{{Str_slug($row->title)}}-z{{$row->id}}"><i class="fab fa-windows logo-icon"></i>{{$row->title}}</a>
                                     </li>

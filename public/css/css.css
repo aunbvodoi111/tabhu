@@ -3,6 +3,7 @@ body {
     font-size: 14px;
     color: #333;
     background-color: #fff;
+    
 }
 ul{
     padding: 0;
@@ -28,7 +29,7 @@ a:hover {
 }
 
 .menu ul li a{
-    display: block;
+    
     color: #f5f5f5;
     padding: 0px 30px 0px 18px;
     line-height: 47px;
@@ -43,6 +44,7 @@ a:hover {
 .menu{
     background-color: #107bbd;
     height: 47px;
+    position: relative;
 }
 .logo-icon{
     font-size: 13px;
@@ -183,7 +185,7 @@ p{
     position: relative;
 }
 .ab{
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     z-index: 6;
     display: none;
@@ -198,4 +200,110 @@ ul li {
 
 ul li a{
     color: rgba(0,0,0,.87);
+}
+.po{
+    position: relative;
+}
+@media only screen and (max-width: 768px) {
+    .ta ul li{
+        background: black;
+        z-index: 20;
+        list-style-type: none;
+        float: none;
+        text-align: left;
+        position: relative;
+    } 
+    .ab li{
+       background: red !important;
+        
+    }
+    .closet{
+        color: white;
+    }
+    .ta{
+        padding: 0px !important;
+    }
+    .content-right{
+        display: none;
+    }
+    .po{
+        display: none;
+    }
+    .img-ar img{
+        height: 204px;
+    }
+    .img-top img{
+        width: 100px;
+    }
+    .news a{
+        font-size: 18px !important;
+    }
+    .input-txt {
+        padding-left: 10px !important;
+    }
+    .hide-desk{
+        display: none;
+    }
+}
+
+.main-footer .utilities {
+    position: fixed;
+    right: 33px;
+    bottom: 34px;
+    z-index: 9999;
+}
+.main-footer .utilities .cart {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border: 2px solid #fff;
+    background-color: #333;
+}
+.main-footer .utilities .cart img {
+    width: 32px;
+    height: 32px;
+}
+.main-footer .utilities .cart {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border: 2px solid #fff;
+    background-color: #333;
+}
+.main-footer .utilities .icon {
+    transition: all .4s ease-in-out 0s;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+    .ab{
+        position: absolute;
+    }
+    .closet{
+        display: none;
+    }
+    .img-ar img{
+        height: 178px;
+    }
+    .show-desk{
+        display: none !important;
+    }
+}
+.footer{
+    padding: 0;
+    background: #313131;
+    text-align: center;
+    color: #999;
+    height: 200px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: 20px;
+    line-height: 200px;
 }
