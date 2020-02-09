@@ -279,6 +279,10 @@ ul li a{
     align-items: center;
     position: relative;
 }
+.notfound{
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+}
 
 @media only screen and (min-width: 768px) {
     .ab{

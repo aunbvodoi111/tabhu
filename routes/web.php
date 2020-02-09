@@ -210,4 +210,6 @@ Route::group(['prefix'=>'quantri','middleware'=>'auth'],function(){
         return view('admin.news.add');
     });
 });
+
+Route::get('/{any}', 'HomeController@notfound')->where('any', '.*');
 Auth::routes();

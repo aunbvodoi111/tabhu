@@ -31,6 +31,11 @@ class HomeController extends Controller
         return view('client.index',compact('news'));
     }
 
+    public function notfound()
+    {
+        return view('client.notfound');
+    }
+
     public function search(Request $request){
         $news = News::where('title','like', '%' . $request->search . '%')->get();
         $keyword = $request->search;
