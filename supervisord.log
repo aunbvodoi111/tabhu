@@ -1,0 +1,17 @@
+2020-02-09 08:43:35,375 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-02-09 08:43:35,375 INFO Included extra file "/etc/supervisor.d/cron.conf" during parsing
+2020-02-09 08:43:35,375 INFO Included extra file "/etc/supervisor.d/horizon.conf" during parsing
+2020-02-09 08:43:35,375 INFO Included extra file "/etc/supervisor.d/php-fpm.conf" during parsing
+2020-02-09 08:43:35,417 INFO supervisord started with pid 1
+2020-02-09 08:43:36,419 INFO spawned: 'php-fpm' with pid 10
+2020-02-09 08:43:36,430 INFO spawned: 'horizon' with pid 11
+2020-02-09 08:43:36,431 INFO spawned: 'cron-job' with pid 12
+2020-02-09 08:43:37,561 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-09 08:43:37,562 INFO success: horizon entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-09 08:43:37,563 INFO success: cron-job entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-09 08:43:45,603 INFO exited: horizon (exit status 1; not expected)
+2020-02-09 08:43:46,608 INFO spawned: 'horizon' with pid 21
+2020-02-09 08:43:47,610 INFO success: horizon entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-09 08:43:47,906 INFO exited: horizon (exit status 1; not expected)
+2020-02-09 08:43:48,911 INFO spawned: 'horizon' with pid 28
+2020-02-09 08:43:49,905 INFO exited: horizon (exit status 1; not expected)
