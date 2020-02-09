@@ -8,12 +8,23 @@ ul{
     padding: 0;
     margin: 0;
 }
-
-ul li{
+a:hover {
+    color: #ff4500;
+    text-decoration: none;
+}
+.ta ul li{
     list-style-type: none;
     float: left;
     
     text-align: center;
+}
+.ab li{
+    float: none;
+}
+
+.ab {
+    float: none;
+    background-color: #107bbd;
 }
 
 .menu ul li a{
@@ -62,6 +73,9 @@ ul li{
 .content-main{
     border: 1px solid #ddd;
 }
+.content-main a:hover {
+    color: #ff4500;
+}
 .content-main a {
     color: #383d41;
     font-size: 20px;
@@ -90,6 +104,10 @@ p{
 .ar-right a{
     color: #383d41;
 }
+.ar-right a:hover {
+    color: #ff4500;
+    text-decoration: none;
+}
 .title-right{
     font-size: 14px;
     margin-bottom: 10px;
@@ -112,6 +130,11 @@ p{
     padding: 0 7px;
     font-size: 14px;
     font-weight: normal;
+}
+
+.main-breadcum a:hover {
+    color: #ff4500;
+    text-decoration: none;
 }
 .main-breadcum{
     width: 100%;
@@ -146,6 +169,33 @@ p{
     font-size: 13px;
     line-height: 20px;
 }
+.news-relative a:hover {
+    color: #ff4500;
+    text-decoration: none;
+}
 .news-relative{
     margin: 10px 0px;
+}
+.input-txt{
+    padding: 0px !important;
+}
+.po{
+    position: relative;
+}
+.ab{
+    position: absolute;
+    width: 100%;
+    z-index: 6;
+    display: none;
+    border: none;
+}
+.ab li a{
+    border-right: 0px solid rgba(0, 0, 0, 0.10) !important;
+}
+ul li {
+    list-style-type: none;
+}
+
+ul li a{
+    color: rgba(0,0,0,.87);
 }

@@ -63,37 +63,35 @@ class DetailController extends Controller
     public function index(Request $request,$title,$id)
     {
         // dd($title);
-        $news = News::where('id',$id)->first();
+        $data = News::where('id',$id)->first();
         
-        if($news->subphu_id > 0){
-            $lienquan = News::where('subphu_id',$news->subphu_id)->get();
-            break; 
-        }else if($news->subcate_id > 0){
-            $lienquan = News::where('subcate_id',$news->subphu_id)->get();
-            break; 
-        }else if($news->cate_id > 0){
-            $lienquan = News::where('cate_id',$news->subphu_id)->get();
+        if($data->cate_id > 0){
+            $lienquan = News::where('cate_id',$data->cate_id)->get();
+        }else if($data->subcate_id > 0){
+            $lienquan = News::where('subcate_id',$data->subphu_id)->get();
+        }else if($data->subphu_id > 0){
+            $lienquan = News::where('subphu_id',$data->subphu_id)->get();
         }
-        return view('client.detail',compact('news','lienquan'));
+        return view('client.detail',compact('data','lienquan'));
     }
 
     public function cate(Request $request,$title,$id)
     {
-        $news = Cate::where('id',$id)->with('news')->first();
-        return view('client.list',compact('news'));
+        $data = Cate::where('id',$id)->with('news')->first();
+        return view('client.list',compact('data'));
     }
 
     public function subcate(Request $request,$subcate,$title,$id)
     {
-        $news = Subcate::where('id',$id)->with('news')->first();
-        return view('client.sublist',compact('news'));
+        $data = Subcate::where('id',$id)->with('news')->first();
+        return view('client.sublist',compact('data'));
     }
 
     public function subphu(Request $request,$subcate,$title,$id)
     {
-        $news = Subphu::where('id',$id)->with('news')->first();
+        $data = Subphu::where('id',$id)->with('news')->first();
         // dd($news);
-        return view('client.sublist',compact('news'));
+        return view('client.sublist',compact('data'));
     }
 
     

@@ -7,7 +7,7 @@
             <div class="container include">
                 <div class="row">
                     <div class="content-main col-sm-8">
-                        @foreach($news->news as $item)
+                        @foreach($data->news as $item)
                             <div class="col-sm-12 news">
                                 <article>
                                     <h2><a href="{{Str_slug($item->title)}}-t{{$item->id}}">{{ $item->title }}</a></h2>
@@ -51,8 +51,8 @@
                             <span>Tin tức khác</span>
                         </div>
                         <ul>
-                            @foreach($news->subcates as $item)
-                                <li><a href="{{Str_slug($news->title)}}/{{Str_slug($item->title)}}-z{{$item->id}}">{{$item->title}}</a></li>
+                            @foreach($data->subcates as $item)
+                                <li><a href="{{Str_slug($data->title)}}/{{Str_slug($item->title)}}-z{{$item->id}}">{{$item->title}}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -62,5 +62,4 @@
     </div>
 </section>
 @endsection
-</body>
-</html>
+
