@@ -211,5 +211,7 @@ Route::group(['prefix'=>'quantri','middleware'=>'auth'],function(){
     });
 });
 
-Route::get('/{any}', 'HomeController@notfound')->where('any', '.*');
+
 Auth::routes();
+
+Route::get('/{any}', 'HomeController@notfound')->where('any', '.*');

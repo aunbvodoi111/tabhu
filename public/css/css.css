@@ -284,7 +284,14 @@ ul li a{
     padding: 20px 0px 0px 0px;
 }
 
+
 @media only screen and (min-width: 768px) {
+    .ar-right img{
+        width: 90px;
+        height: 60px;
+        margin: 5px 0px;
+        
+    }
     .ab{
         position: absolute;
     }

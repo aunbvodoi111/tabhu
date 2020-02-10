@@ -18,13 +18,13 @@
         <div class="content">
             <div class="container include">
                 <div class="row">
-                    <div class="content-main col-sm-9">
+                    <div class="content-main col-sm-8">
                         <div class="main-breadcum container">
                              <a href="/">Trang chủ</a>›
                              <a href="{{Str_slug($data->subphu->subcate->title)}}/{{Str_slug($data->subphu->title)}}-z{{$data->subphu->id}}">{{ $data->subphu->subcate->title }}</a>›
                              <a href="{{Str_slug($data->subphu->subcate->title)}}/{{Str_slug($data->subphu->title)}}-z{{$data->subphu->id}}">{{ $data->subphu->title }}</a>
                         </div>
-                        <div class="title-ar-d container">
+                        <div class="title-ar-d ">
                             <h1>{{ $data->title }}</h1>
                         </div>
                         <div class="post-meta ">
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-right col-sm-3">
+                    <div class="content-right col-sm-4">
                         <div class="title-right">
                             <span>Tin tức khác</span>
                         </div>
