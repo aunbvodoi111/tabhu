@@ -158,7 +158,7 @@ $detail = $dom->saveHTML( $dom->documentElement );
 				$file=$res->file('image');
 				$name= $file->getClientOriginalName();
 				$image = str_random()."_".$name;
-				$file->move(public_path("/img",$image));
+				$file->move("img",$image);
 				$news->image = $image;
 			}
     	$news->save();
