@@ -11,9 +11,9 @@
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
-@extends('admin.index')
+
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-        @section('content')
+
         {{ csrf_field() }}
         <base href="{{asset('')}}">
         <script type="text/javascript" src="ckeditor/ckeditor.js"></script> 
@@ -195,4 +195,4 @@
     
           });
       </script>
-    @endsection
+

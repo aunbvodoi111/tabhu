@@ -19,6 +19,6 @@ class Subcate extends Model
         return $this->hasManyThrough(
             'App\News', 'App\Subphu',
             'subcate_id', 'subphu_id', 'id'
-        );
+        )->orderBy('id','DESC');
     }
 }

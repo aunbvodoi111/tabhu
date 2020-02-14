@@ -64,13 +64,15 @@ class DetailController extends Controller
     {
         // dd($title);
         $data = News::where('id',$id)->first();
-        
+        $data->view =  $data->view + 1;
+        $data->save();
         if($data->cate_id > 0){
-            $lienquan = News::where('cate_id',$data->cate_id)->get();
+            $lienquan = News::where('cate_id',$data->cate_id)->orderBy('id','DESC')->get();
         }else if($data->subcate_id > 0){
-            $lienquan = News::where('subcate_id',$data->subphu_id)->get();
+            $lienquan = News::where('subcate_id',$data->subphu_id)->orderBy('id','DESC')->get();
         }else if($data->subphu_id > 0){
-            $lienquan = News::where('subphu_id',$data->subphu_id)->get();
+            
+            $lienquan = News::where('subphu_id',$data->subphu_id)->orderBy('id','DESC')->get();
         }
         return view('client.detail',compact('data','lienquan'));
     }
@@ -90,8 +92,10 @@ class DetailController extends Controller
     public function subphu(Request $request,$subcate,$title,$id)
     {
         $data = Subphu::where('id',$id)->with('news')->first();
+        $id = $data->subcate_id;
+        $subphu = Subphu::where('subcate_id',$id)->orderBy('id','DESC')->get();
         // dd($news);
-        return view('client.sublist',compact('data'));
+        return view('client.subphu',compact('data','subphu'));
     }
 
     

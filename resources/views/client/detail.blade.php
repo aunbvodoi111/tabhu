@@ -19,7 +19,7 @@
             <div class="container include">
                 <div class="row">
                     <div class="content-main col-sm-8">
-                        <div class="main-breadcum container">
+                        <div class="main-breadcum ">
                              <a href="/">Trang chủ</a>›
                              <a href="{{Str_slug($data->subphu->subcate->title)}}/{{Str_slug($data->subphu->title)}}-z{{$data->subphu->id}}">{{ $data->subphu->subcate->title }}</a>›
                              <a href="{{Str_slug($data->subphu->subcate->title)}}/{{Str_slug($data->subphu->title)}}-z{{$data->subphu->id}}">{{ $data->subphu->title }}</a>

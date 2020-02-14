@@ -38,6 +38,10 @@ a:hover {
     position: relative;
     font-size: 13px;
 }
+
+.detail img{
+    width: 100% !important;
+}
 .menu ul li a i{
    color: white;
 }

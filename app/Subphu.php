@@ -9,7 +9,7 @@ class Subphu extends Model
     //
     protected $table ="subphus";
     public function news(){
-        return $this->hasMany(News::class,'subphu_id','id');
+        return $this->hasMany(News::class,'subphu_id','id')->orderBy('id','DESC');
     }
     public function subcate(){
         return $this->belongsTo(Subcate::class,'subcate_id','id');

@@ -205,15 +205,12 @@
                 <li><a href="/"><i class="fab fa-windows logo-icon"></i>Di động</a></li> -->
                 @foreach($cate as $item)
                     <li class='po'>
-                        <a href="{{Str_slug($item->title)}}-z{{$item->id}}"><i class="fab fa-windows logo-icon"></i>{{$item->title}} @if(count($item->subcates) > 0) <i class="fas fa-caret-down multipe-menu"></i> @endif</a>
+                        <a href="{{Str_slug($item->title)}}-z{{$item->id}}"><i class="{{$item->icon}} logo-icon"></i>{{$item->title}} @if(count($item->subcates) > 0) <i class="fas fa-caret-down multipe-menu"></i> @endif</a>
                         @if(count($item->subcates) > 0)
                             <ul class='ab'>
                                 @foreach($item->subcates as $row)
                                     <li>
-                                        <a href="{{Str_slug($item->title)}}/{{Str_slug($row->title)}}-z{{$row->id}}"><i class="fab fa-windows logo-icon"></i>{{$row->title}}</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{Str_slug($item->title)}}/{{Str_slug($row->title)}}-z{{$row->id}}"><i class="fab fa-windows logo-icon"></i>{{$row->title}}</a>
+                                        <a href="{{Str_slug($item->title)}}/{{Str_slug($row->title)}}-z{{$row->id}}">{{$row->title}}</a>
                                     </li>
                                 @endforeach
                             </ul>

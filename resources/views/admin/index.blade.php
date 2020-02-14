@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="admin/assets/css/themify-icons.css">
     <link rel="stylesheet" href="admin/assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="admin/assets/css/cs-skin-elastic.css">
-    <!-- <link rel="stylesheet" href="admin/assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="admin/assets/scss/style.css">
     <link href="admin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
