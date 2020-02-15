@@ -165,12 +165,9 @@
                         height: 300,
                         focus: true
                   });
-                  // var markupStr = $('.summernote').summernote('{{$news->description}}');
-                  // $('.summernote').summernote('pasteHTML', "{{@$news->description}})");
-                  // var textareaValue = $('.summernote').summernote('code');
-                  // $('.summernote').summernote('code', '{{@$news->description}}').html().text()
+                  
                   var markupStr = $('.summernote').val();
-                  // var markupStr = $('.summernote').eq(1).summernote('code');
+            
                   $('#summernote').summernote('code', markupStr);
                 });
                 $(document).ready(function(){
