@@ -24,7 +24,11 @@ class NewsController extends Controller
     	return view('admin.news.edit',compact('news','subcate','subphu','cate'));
 	}
 
-	
+	public function getDelete($id){
+		$cate = News::find($id);
+		$cate->delete();
+		return  redirect('quantri/new/list')->with('thongbao','Bạn đã thêm thành công');
+	}
 	public function postEdit(Request $res,$id)
     {
 		// dd(1);
@@ -152,6 +156,7 @@ $detail = $dom->saveHTML( $dom->documentElement );
 		$news->status = 1;
 		$news->description = $detail;
 		
+		dd($res->file('image'));
 		
 		if($res->hasFile('image'))
 			{
