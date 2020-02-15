@@ -18,7 +18,7 @@
                                     <div class="row">
                                         <div class="col-sm-5 img-ar">
                                             <a href="{{Str_slug($item->title)}}-t{{$item->id}}">
-                                                <img src="img/{{$item->image}}" alt="" width="100%" >
+                                                <img src="img/{{$item->image}}" alt="{{$item->title}}" width="100%" >
                                             </a>
                                         </div>
                                         <div class="col-sm-7">
@@ -48,13 +48,13 @@
                     </div>
                     <div class="content-right col-sm-4">
                         <div class="title-right">
-                            <span>Tin tức khác</span>
+                            <span>Bài viết khác</span>
                         </div>
                         @foreach($news as $item)
                             <div class="ar-right row">
                                 <div class='img-r col-sm-3'>
                                     <a href="{{Str_slug($item->title)}}-t{{$item->id}}">
-                                        <img src="img/{{$item->image}}" alt=""width="100%" >
+                                        <img src="img/{{$item->image}}" alt="{{$item->title}}" width="100%" >
                                     </a>
                                 </div>
                                 <div class='img-r col-sm-9'>

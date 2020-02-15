@@ -1,7 +1,18 @@
 
-        <!-- Header-->
-        @extends('admin.index')
-        @section('content')
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+
+
+
+<script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<!-- include summernote css/js-->
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+        
         <base href="{{asset('')}}">
         <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
         <div class="breadcrumbs">
@@ -60,18 +71,9 @@
                                 <div class="col-12 col-md-9"><input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
                               </div> --}}
                               <div class="row form-group">
-                                <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Textarea</label></div>
+                                <div class="col col-md-3"><label for="textarea-input" class=" form-control-label" id="content" >Textarea</label></div>
                                 <div class="col-12 col-md-9">
-                                  <textarea name="description" id="text" cols="30" rows="25" class="ckeditor">{!!$news->description!!}</textarea>
-                                  <script type="text/javascript">
-                                    var editor = CKEDITOR.replace('description',{
-                                      language:'vi',
-                                      filebrowserImageBrowseUrl: '../../ckfinder/ckfinder.html?Type=Images',
-                                      filebrowserFlashBrowseUrl: '../../ckfinder/ckfinder.html?Type=Flash',
-                                      filebrowserImageUploadUrl: '../../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                      filebrowserFlashUploadUrl: '../../public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                    });
-                                  </script>
+                                  <textarea class="form-control summernote" name="detail" value= {!!$news->description!!}>  </textarea>
                                 </div>
                               </div>
                               <div class="row form-group">
@@ -156,8 +158,21 @@
         
             <!-- Right Panel -->
         
-            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+     
             <script>
+                $(document).ready(function() {
+                  $('.summernote').summernote({
+                        height: 300,
+                        focus: true
+                  });
+                  // var markupStr = $('.summernote').summernote('{{$news->description}}');
+                  // $('.summernote').summernote('pasteHTML', "{{@$news->description}})");
+                  // var textareaValue = $('.summernote').summernote('code');
+                  // $('.summernote').summernote('code', '{{@$news->description}}').html().text()
+                  var markupStr = $('.summernote').val();
+                  // var markupStr = $('.summernote').eq(1).summernote('code');
+                  $('#summernote').summernote('code', markupStr);
+                });
                 $(document).ready(function(){
                   $('#chang_subcate').change(function(){
                     var id = $(this).val() 
@@ -195,12 +210,4 @@
             
             <script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
         
-        @endsection
-        {{-- <style> 
-          #cke_text { 
-              min-height: 400px; 
-          } 
-          #cke_1_bottom{
-            min-height: 400px; 
-          }
-          </style>  --}}
+      

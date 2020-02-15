@@ -18,7 +18,7 @@
                                     <div class="row">
                                         <div class="col-sm-5 img-ar">
                                             <a href="{{Str_slug($item->title)}}-t{{$item->id}}">
-                                                <img src="img/{{$item->image}}" alt="" width="100%" height="178px">
+                                                <img src="img/{{$item->image}}" alt="{{$item->title}}" width="100%" height="178px">
                                             </a>
                                         </div>
                                         <div class="col-sm-7">

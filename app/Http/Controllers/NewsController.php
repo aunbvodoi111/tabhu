@@ -31,35 +31,73 @@ class NewsController extends Controller
 	}
 	public function postEdit(Request $res,$id)
     {
-		// dd(1);
-		$news = News::find($id);
+		// dd($res->input('detail'));
 		$this->validate($res, 
-    		[
-				'title'=>'required|min:3|max:100',
-				'lang'=>'required',
-				'status'=>'required',
-				'description'=>'required',
-				'subphu_id'=>'required',
-    		],
-    		[
-    			'title.required'=>'Bạn chưa nhập danh mục chính',
-				'title.min'=>'Tên phải có nhiều hơn 3 kí tự',
-				'lang.required'=>'Bạn chưa chọn ngôn ngữ',
-				'subphu_id.required'=>'Bạn chưa chọn danh mục phụ',
-				'description.required'=>'Bạn chưa nhập miêu tả',
-				'status.required'=>'bạn chưa chọn loại danh mục',
-				'title.max'=>'Tên phải có ít hơn 100 kí tự',
-    		]);
-		$news->title = $res->title;
-		$news->subcate_id = $res->subcate_id;
-		$news->lang = $res->lang;
-		$news->description = $res->description;
-		$news->subphu_id = $res->subphu_id;
-		if($res->status == 6 || $res->status == 7){
+		[
+			'title'=>'required|min:3|max:100',
+			'lang'=>'required',
+			'status'=>'required',
+			
+			'subphu_id'=>'required',
+			
+			'detail' => 'required',
+		],
+		[
+			'title.required'=>'Bạn chưa nhập danh mục chính',
+			'title.min'=>'Tên phải có nhiều hơn 3 kí tự',
+			'lang.required'=>'Bạn chưa chọn ngôn ngữ',
+			'subphu_id.required'=>'Bạn chưa chọn danh mục phụ',
+			
+			'status.required'=>'bạn chưa chọn loại danh mục',
+			'title.max'=>'Tên phải có ít hơn 100 kí tự',
+		
+		]);
+		$news = News::find($id);
+		$detail=$res->input('detail');
+				
+			$dom = new \DomDocument();
+
+
+@$dom->loadHTML( $detail );
+		$images = $dom->getElementsByTagName('img');
+			
+			foreach($images as $k => $img){
+					
+					$data = $img->getAttribute('src');
+					$pos = strpos($data, 'base');
+					if($pos !== false){
+						// dd(explode(',', $data)[0]);
+						// dd( explode(';', $data));
+					list($type, $data) = explode(';', $data);
+		
+					list(, $data)      = explode(',', $data);
+		
+					$data = base64_decode($data);
+		
+					$image_name= "/upload/" . time().$k.'.png';
+		
+					$path = public_path() . $image_name;
+		
+					file_put_contents($path, $data);
+		
+					$img->removeAttribute('src');
+		
+					$img->setAttribute('src', $image_name);
+				// dd($image_name);
+					}
+	
+			}
+$detail = $dom->saveHTML( $dom->documentElement );
+		
+			$news->title = $res->title;
+			$news->subcate_id = $res->subcate_id;
+			$news->lang = $res->lang;
+			$news->short_title = 'Với Firebase, bạn có thể lưu trữ và đồng bộ hóa dữ liệu lên NoSQL cloud database.';
+			$news->subphu_id = 1;
+			$news->cate_id = 1;
+			$news->user_id = 1;
 			$news->status = 1;
-		}else if($res->status == 6 || $res->status == 7){
-			$news->status = 2;
-		}
+			$news->description = $detail;
 		
 		if($res->hasFile('image'))
 			{
@@ -84,7 +122,8 @@ class NewsController extends Controller
 	
     public function postAdd(Request $res)
     {
-		// dd($res->all());
+		
+		
     	$this->validate($res, 
     		[
 				'title'=>'required|min:3|max:100',
@@ -104,7 +143,7 @@ class NewsController extends Controller
 				'status.required'=>'bạn chưa chọn loại danh mục',
 				'title.max'=>'Tên phải có ít hơn 100 kí tự',
 				'image.required'=>'Bạn chưa chọn hình ảnh',
-			]);;
+			]);
 	
 			$detail=$res->input('detail');
 				
@@ -122,22 +161,27 @@ class NewsController extends Controller
 			foreach($images as $k => $img){
 	
 				$data = $img->getAttribute('src');
-	
-				list($type, $data) = explode(';', $data);
-	
-				list(, $data)      = explode(',', $data);
-	
-				$data = base64_decode($data);
-	
-				$image_name= "/upload/" . time().$k.'.png';
-	
-				$path = public_path() . $image_name;
-	
-				file_put_contents($path, $data);
-	
-				$img->removeAttribute('src');
-	
-				$img->setAttribute('src', $image_name);
+				// dd($data);
+				// dd();
+				if(explode(';', $data)[0]){
+					list($type, $data) = explode(';', $data);
+				// dd($data);
+		
+					list(, $data)      = explode(',', $data);
+					
+					$data = base64_decode($data);
+					
+					$image_name= "/upload/" . time().$k.'.png';
+		
+					$path = public_path() . $image_name;
+					
+					file_put_contents($path, $data);
+		
+					$img->removeAttribute('src');
+		
+					$img->setAttribute('src', $image_name);
+				}
+				
 				// dd($image_name);
 	
 			}
@@ -156,7 +200,6 @@ $detail = $dom->saveHTML( $dom->documentElement );
 		$news->status = 1;
 		$news->description = $detail;
 		
-		dd($res->file('image'));
 		
 		if($res->hasFile('image'))
 			{

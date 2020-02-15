@@ -322,3 +322,8 @@ ul li a{
     margin-top: 20px;
     line-height: 200px;
 }
+
+.news-relative img{
+    height: 130px;
+    border-radius: 4px;
+}

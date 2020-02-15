@@ -76,7 +76,7 @@
                     </div>
                     <div class="content-right col-sm-4">
                         <div class="title-right">
-                            <span>Tin tức khác</span>
+                            <span>Bài viết khác</span>
                         </div>
                         @foreach($lienquan as $item)
                             <div class="ar-right row">
