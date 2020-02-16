@@ -18,6 +18,7 @@ class DetailController extends Controller
     {
         $cate = Cate::where('lang',\Lib::lang())->get();
         // dd(\Lib::lang());
+        // dd($cate);
         \View::share('cate', $cate);
         // $this->middleware('auth');
     }
@@ -66,6 +67,15 @@ class DetailController extends Controller
         $data = News::where('id',$id)->first();
         $data->view =  $data->view + 1;
         $data->save();
+        if($data->lang == 'vi'){
+            $request->session()->put(['lang' => 'vi']);
+            \Cookie::queue('langdefault','vi',60*24*365);
+         
+        }else{
+            $request->session()->put(['lang' => 'en']);
+            \Cookie::queue('langdefault','en',60*24*365);
+            
+        }
         if($data->cate_id > 0){
             $lienquan = News::where('cate_id',$data->cate_id)->orderBy('id','DESC')->get();
         }else if($data->subcate_id > 0){
@@ -80,6 +90,7 @@ class DetailController extends Controller
     public function cate(Request $request,$title,$id)
     {
         $data = Cate::where('id',$id)->with('news')->first();
+        // dd($data);
         return view('client.list',compact('data'));
     }
 

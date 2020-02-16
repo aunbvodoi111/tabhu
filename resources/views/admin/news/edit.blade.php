@@ -73,7 +73,7 @@
                               <div class="row form-group">
                                 <div class="col col-md-3"><label for="textarea-input" class=" form-control-label" id="content" >Textarea</label></div>
                                 <div class="col-12 col-md-9">
-                                  <textarea class="form-control summernote" name="detail" value= {!!$news->description!!}>  </textarea>
+                                  <textarea class="form-control summernote" name="detail" > {!!$news->description!!} </textarea>
                                 </div>
                               </div>
                               <div class="row form-group">
@@ -162,13 +162,13 @@
             <script>
                 $(document).ready(function() {
                   $('.summernote').summernote({
-                        height: 300,
-                        focus: true
+                        height: 500,
+                        
                   });
                   
                   var markupStr = $('.summernote').val();
             
-                  $('#summernote').summernote('code', markupStr);
+                  $('.summernote').summernote('code', markupStr);
                 });
                 $(document).ready(function(){
                   $('#chang_subcate').change(function(){

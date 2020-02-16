@@ -67,7 +67,7 @@ class NewsController extends Controller
 					$pos = strpos($data, 'base');
 					if($pos !== false){
 						// dd(explode(',', $data)[0]);
-						// dd( explode(';', $data));
+						//  
 					list($type, $data) = explode(';', $data);
 		
 					list(, $data)      = explode(',', $data);

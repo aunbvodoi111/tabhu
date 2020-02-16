@@ -18,9 +18,10 @@ class Cate extends Model
 
     public function news()
     {
-        return $this->hasManyThrough(
-            'App\News', 'App\Subphu',
-            'subcate_id', 'subphu_id', 'id'
-        )->orderBy('id','DESC');
+        return $this->hasMany(News::class,'cate_id','id')->orderBy('id','DESC');
+        // return $this->hasManyThrough(
+        //     'App\News', 'App\Subphu',
+        //     'subcate_id', 'subphu_id', 'id'
+        // )->orderBy('id','DESC');
     }
 }

@@ -14,20 +14,34 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $cate = Cate::with('subcates')->get();
+        $cate = Cate::where('lang',\Lib::lang())->get();
         
         \View::share('cate', $cate);
         // $this->middleware('auth');
     }
 
+    private $langActive = [
+        'vi',
+        'en',
+    ];
+
+    public function lang(Request $request, $lang)
+    {
+        if (in_array($lang, $this->langActive)) {
+            $request->session()->put(['lang' => $lang]);
+            \Cookie::queue('langdefault',$lang,60*24*365);
+            return redirect()->back();
+        }
+    }
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $news = News::orderBy('id','DESC')->inRandomOrder()->get();
+        // dd(\Lib::lang()); dd((\Cookie::get('langdefault')));
+        $news = News::where('lang',\Cookie::get('langdefault'))->orderBy('id','DESC')->inRandomOrder()->orderBy('id','DESC')->get();
         return view('client.index',compact('news'));
     }
 
@@ -37,7 +51,7 @@ class HomeController extends Controller
     }
 
     public function search(Request $request){
-        $news = News::where('title','like', '%' . $request->search . '%')->get();
+        $news = News::where('lang',\Cookie::get('langdefault'))->where('title','like', '%' . $request->search . '%')->orderBy('id','DESC')->get();
         $keyword = $request->search;
           return view('client.search',compact('news','keyword'));
       }
