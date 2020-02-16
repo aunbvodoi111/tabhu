@@ -92,7 +92,7 @@
                               <div class="row form-group">
                                 <div class="col col-md-3"><label for="select" class=" form-control-label">Loại tin</label></div>
                                 <div class="col-12 col-md-9">
-                                  <select name="status" id="chang_cate" class="form-control">
+                                  <select name="cate_id" id="chang_cate" class="form-control">
                                     <option value="0">--Chọn loại tin--</option>
                                     @foreach($cate as $item)
                                       <option value="{{$item->id}}" >{{$item->title}}</option>
