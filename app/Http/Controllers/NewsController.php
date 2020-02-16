@@ -36,7 +36,7 @@ class NewsController extends Controller
 		[
 			'title'=>'required|min:3|max:100',
 			'lang'=>'required',
-			'status'=>'required',
+
 			
 			'subphu_id'=>'required',
 			
@@ -48,7 +48,7 @@ class NewsController extends Controller
 			'lang.required'=>'Bạn chưa chọn ngôn ngữ',
 			'subphu_id.required'=>'Bạn chưa chọn danh mục phụ',
 			
-			'status.required'=>'bạn chưa chọn loại danh mục',
+
 			'title.max'=>'Tên phải có ít hơn 100 kí tự',
 		
 		]);
@@ -93,8 +93,8 @@ $detail = $dom->saveHTML( $dom->documentElement );
 			$news->subcate_id = $res->subcate_id;
 			$news->lang = $res->lang;
 			$news->short_title = 'Với Firebase, bạn có thể lưu trữ và đồng bộ hóa dữ liệu lên NoSQL cloud database.';
-			$news->subphu_id = 1;
-			$news->cate_id = 1;
+			$news->subphu_id = $res->subphu_id;
+			$news->cate_id = $res->cate_id;
 			$news->user_id = 1;
 			$news->status = 1;
 			$news->description = $detail;

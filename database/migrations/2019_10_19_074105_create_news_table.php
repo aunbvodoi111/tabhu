@@ -20,7 +20,7 @@ class CreateNewsTable extends Migration
             $table->string('short_title');
             $table->string('view')->default(0);
             $table->string('lang');
-            $table->text('description');
+            $table->longtext('description');
             $table->integer('status');
             $table->integer('subphu_id');
             $table->integer('subcate_id');
