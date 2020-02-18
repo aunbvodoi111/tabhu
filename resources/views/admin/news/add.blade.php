@@ -1,4 +1,5 @@
-
+<div class="container">
+  
         <!-- Header-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
 
@@ -73,6 +74,12 @@
                                 <div class="col col-md-3"><label for="password-input" class=" form-control-label">Password</label></div>
                                 <div class="col-12 col-md-9"><input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
                               </div> --}}
+                              <div class="row form-group">
+                                <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Textarea</label></div>
+                                <div class="col-12 col-md-8">
+                                  <textarea class="form-control" name="shorttitle"></textarea>
+                                </div>
+                              </div>
                               <div class="row form-group">
                                 <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Textarea</label></div>
                                 <div class="col-12 col-md-9">
@@ -196,3 +203,5 @@
           });
       </script>
 
+
+</div>

@@ -7,6 +7,7 @@ use App\Subcate;
 use App\Cate;
 use App\News;
 use App\Subphu;
+use Auth;
 class NewsController extends Controller
 {
     public function getList()
@@ -92,10 +93,10 @@ $detail = $dom->saveHTML( $dom->documentElement );
 			$news->title = $res->title;
 			$news->subcate_id = $res->subcate_id;
 			$news->lang = $res->lang;
-			$news->short_title = 'Với Firebase, bạn có thể lưu trữ và đồng bộ hóa dữ liệu lên NoSQL cloud database.';
+			$news->short_title = $res->shorttitle;
 			$news->subphu_id = $res->subphu_id;
 			$news->cate_id = $res->cate_id;
-			$news->user_id = 1;
+			$news->user_id = Auth::user()->id;
 			$news->status = 1;
 			$news->description = $detail;
 		
@@ -193,10 +194,10 @@ $detail = $dom->saveHTML( $dom->documentElement );
 		$news->title = $res->title;
 		$news->subcate_id = $res->subcate_id;
 		$news->lang = $res->lang;
-		$news->short_title = 'Với Firebase, bạn có thể lưu trữ và đồng bộ hóa dữ liệu lên NoSQL cloud database.';
+		$news->short_title = $res->shorttitle;
 		$news->subphu_id = $res->subphu_id;
 		$news->cate_id = $res->cate_id;
-		$news->user_id = 1;
+		$news->user_id = Auth::user()->id;
 		$news->status = 1;
 		$news->description = $detail;
 		
