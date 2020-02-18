@@ -93,37 +93,37 @@
             }
         </script>
     @else
-        <title>Tabhuman.com - Web tin tức, giải trí ,kiến thức, thủ thuật </title>
+        <title>Tabhuman.com - Web tin tức, giải trí ,kiến thức, thủ thuật, công nghệ </title>
         <link rel="canonical" href="https://tabhuman.com/" />
-        <meta name="author" content="ngamgaisexy.com" />
+        <meta name="author" content="tabhuman.com" />
         <link rel="icon" type="image/png" href="img/favi.png">
-        <meta name="description" content="Hệ thống cửa hàng Mẹ và Bé BiboMart chuyên cung cấp đồ sơ sinh, đồ chơi, xe đẩy, giường cũi, sản phẩm dành cho mẹ bé giá tốt và chia sẻ những kiến thức hữu ích nhất." />
+        <meta name="description" content="Technology Articles Platform from Asia, filled with latest information on Programming Languages and Frameworks. Ruby on Rails / PHP / Swift / Unity / Java /.Net" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="QuynhPhuongbaby.com - Hệ thống cửa hàng Mẹ và bé số 1 Việt Nam " />
+        <meta property="og:title" content="TabHuman.com - Web tin tức, giải trí ,kiến thức, thủ thuật, công nghệ " />
         <link rel='shortlink' href='https://tabhuman.com/' />
-        <meta property="og:description" content="Hệ thống cửa hàng Mẹ và Bé BiboMart chuyên cung cấp đồ sơ sinh, đồ chơi, xe đẩy, giường cũi, sản phẩm dành cho mẹ bé giá tốt và chia sẻ những kiến thức hữu ích nhất." />
+        <meta property="og:description" content="Technology Articles Platform from Asia, filled with latest information on Programming Languages and Frameworks. Ruby on Rails / PHP / Swift / Unity / Java /.Net" />
         <meta property="og:url" content="https://tabhuman.com/" />
-        <meta property="og:site_name" content="Ngam gai Sexy" />
-        <meta property="twitter:title" content="QuynhPhuongbaby.com - Hệ thống cửa hàng Mẹ và bé số 1 Việt Nam" />
-        <meta property="twitter:description" content="Hệ thống cửa hàng Mẹ và Bé BiboMart chuyên cung cấp đồ sơ sinh, đồ chơi, xe đẩy, giường cũi, sản phẩm dành cho mẹ bé giá tốt và chia sẻ những kiến thức hữu ích nhất." />
+        <meta property="og:site_name" content="Tab Human" />
+        <meta property="twitter:title" content="TabHuman.com - Web tin tức, giải trí ,kiến thức, thủ thuật, công nghệ" />
+        <meta property="twitter:description" content="Technology Articles Platform from Asia, filled with latest information on Programming Languages and Frameworks. Ruby on Rails / PHP / Swift / Unity / Java /.Net" />
         <meta content="INDEX,FOLLOW" name="robots" />
-        <meta property="twitter:title" content="QuynhPhuongbaby.com - Hệ thống cửa hàng Mẹ và bé số 1 Việt Nam" />
-        <meta property="twitter:description" content="Hệ thống cửa hàng Mẹ và Bé BiboMart chuyên cung cấp đồ sơ sinh, đồ chơi, xe đẩy, giường cũi, sản phẩm dành cho mẹ bé giá tốt và chia sẻ những kiến thức hữu ích nhất." />
-        <meta property="article:tag" content="QuynhPhuongbaby" />
-        <meta name="copyright" content="Copyright 2018 QuynhPhuongbaby" />
+        <meta property="twitter:title" content="TabHuman.com - Web tin tức, giải trí ,kiến thức, thủ thuật, công nghệ" />
+        <meta property="twitter:description" content="Technology Articles Platform from Asia, filled with latest information on Programming Languages and Frameworks. Ruby on Rails / PHP / Swift / Unity / Java /.Net" />
+        <meta property="article:tag" content="Tabhuman" />
+        <meta name="copyright" content="Copyright 2018 Tabhuman" />
         <meta http-equiv="audience" content="General" />
         <meta name="resource-type" content="Document" />
         <meta name="distribution" content="Global" />
         <meta name="revisit-after" content="1 days" />
-        <meta name="GENERATOR" content="Web QuynhPhuongbaby số 1 Việt Nam" />
+        <meta name="GENERATOR" content="Web Tabhuman công nghệ thủ thuật số 1 Việt Nam" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <script type="application/ld+json">
             {
                 "@context" : "http://schema.org",
                 "@type" : "WebSite",
-                "name" : "Ngamgaisexy",
-                "alternateName" : "Hệ thống cửa hàng Mẹ và Bé BiboMart chuyên cung cấp đồ sơ sinh, đồ chơi, xe đẩy, giường cũi, sản phẩm dành cho mẹ bé giá tốt và chia sẻ những kiến thức hữu ích nhất.",
+                "name" : "Tabhuman",
+                "alternateName" : "Technology Articles Platform from Asia, filled with latest information on Programming Languages and Frameworks. Ruby on Rails / PHP / Swift / Unity / Java /.Net",
                 "url": "{{\Request::fullUrl()}}",
                 "potentialAction": {
                     "@type": "SearchAction",
@@ -136,14 +136,14 @@
             {
                 "@context": "https://schema.org",
                 "@type": "Website",
-                "name": "Ngamgaisexy",
+                "name": "Tabhuman",
                 "url": "{{\Request::fullUrl()}}",
                 "logo": "https://tabhuman.com/img/proxy_form.png",
                 "foundingDate": "2018",
                 "founders": [
                     {
                         "@type": "Person",
-                        "name": "QuynhPhuongbaby"
+                        "name": "Tabhuman"
                     }
                 ]
             }

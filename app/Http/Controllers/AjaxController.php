@@ -177,6 +177,7 @@ class AjaxController extends Controller
     {
         $subphu = Subphu::where('subcate_id',$request->id)->get();
         foreach( $subphu as $item){
+            echo"<option value='0'>Chọn danh mục</option>";
             echo"<option value='".$item->id."'>".$item->title."</option>";
         }
     }
@@ -185,6 +186,7 @@ class AjaxController extends Controller
     {
         $subphu = Subcate::where('cate_id',$request->id)->get();
         foreach( $subphu as $item){
+            echo"<option value='0'>Chọn danh mục</option>";
             echo"<option value='".$item->id."'>".$item->title."</option>";
         }
     }

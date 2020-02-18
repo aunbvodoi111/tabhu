@@ -41,7 +41,12 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         // dd(\Lib::lang()); dd((\Cookie::get('langdefault')));
-        $news = News::where('lang',\Cookie::get('langdefault'))->orderBy('id','DESC')->inRandomOrder()->orderBy('id','DESC')->get();
+        if(\Cookie::get('langdefault')){
+            $news = News::where('lang',\Cookie::get('langdefault'))->orderBy('id','DESC')->inRandomOrder()->orderBy('id','DESC')->get();
+        }else{
+            $news = News::where('lang','vi')->orderBy('id','DESC')->inRandomOrder()->orderBy('id','DESC')->get();
+        }
+        
         return view('client.index',compact('news'));
     }
 

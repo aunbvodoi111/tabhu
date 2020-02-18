@@ -77,12 +77,12 @@ class DetailController extends Controller
             
         }
         if($data->cate_id > 0){
-            $lienquan = News::where('cate_id',$data->cate_id)->orderBy('id','DESC')->get();
+            $lienquan = News::where('cate_id',$data->cate_id)->orderBy('id','DESC')->take(6)->get();
         }else if($data->subcate_id > 0){
-            $lienquan = News::where('subcate_id',$data->subphu_id)->orderBy('id','DESC')->get();
+            $lienquan = News::where('subcate_id',$data->subphu_id)->orderBy('id','DESC')->take(6)->get();
         }else if($data->subphu_id > 0){
             
-            $lienquan = News::where('subphu_id',$data->subphu_id)->orderBy('id','DESC')->get();
+            $lienquan = News::where('subphu_id',$data->subphu_id)->orderBy('id','DESC')->take(6)->get();
         }
         return view('client.detail',compact('data','lienquan'));
     }
